@@ -1,0 +1,35 @@
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+</head>
+<script>
+var rest = {
+	"periodo": 180,
+	"slot_disponibili": [0,1,2,3,4,4,4,23,23,31,31,31,31,31,31,31,31,31,31,31,31],
+	"terapia": [
+  	{
+			"id": 123123,
+			"schema": [1,0,0,0,0,1,1,1,1,1,1],
+			"pesi": [0,1,2,3,4,4,4,23,23,31,31,31,31,31,31,31,31,31,31,31,31]
+		},
+   	{
+			"id": 3,
+			"schema": [1,1,1,1,1,1,1,1,1,1,1],
+			"pesi": [0,1,2,3,4,4,4,23,23,31,31,31,31,31,31,31,31,31,31,31,31]
+		},
+   ]
+};
+
+console.log('dudee')
+$.ajax({
+    url: 'http://127.0.0.1:8888',
+    type: 'POST',
+	data:JSON.stringify(rest),
+    dataType: 'json'
+	})
+	.done(function( data ) {
+      console.log('done',data);
+	})
+	.fail(function( data ) {
+      console.log('fail',data);
+	});
+</script>
